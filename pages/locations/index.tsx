@@ -1,7 +1,6 @@
 import {GetServerSideProps} from 'next'
 import {useRouter} from 'next/router'
 import React, {useCallback} from 'react'
-import styled from 'styled-components'
 import ContentContainer from '../../components/shared/containers/content-container'
 import List from '../../components/shared/list'
 import Pagination from '../../components/shared/pagination'
@@ -21,9 +20,12 @@ const Locations: React.FC<{data: LocationsResponse}> = ({data}) => {
   const {count, next, pages, prev} = info
   const router = useRouter()
 
-  const onTitleClick = useCallback((id: string) => {
-    router.push(`${router.pathname}/${id}`)
-  }, [])
+  const onTitleClick = useCallback(
+    (id: string) => {
+      router.push(`${router.pathname}/${id}`)
+    },
+    [router]
+  )
 
   return (
     <PageLayout headContext={headContext}>

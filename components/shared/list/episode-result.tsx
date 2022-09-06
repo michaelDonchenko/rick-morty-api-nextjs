@@ -14,9 +14,12 @@ const EpisodeResult: React.FC<EpisodeResultProps> = ({result, onTitleClick}) => 
   const {air_date, characters, id, name} = result
   const router = useRouter()
 
-  const onCharacterClick = useCallback((id: string) => {
-    router.push(`/characters/${id}`)
-  }, [])
+  const onCharacterClick = useCallback(
+    (id: string) => {
+      router.push(`/characters/${id}`)
+    },
+    [router]
+  )
 
   return (
     <ResultContainer key={id}>

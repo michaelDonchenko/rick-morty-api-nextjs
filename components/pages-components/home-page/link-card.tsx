@@ -13,7 +13,7 @@ const LinkCard: React.FC<CardProps> = ({name, imageUrl, linkUrl}) => {
 
   const onClick = useCallback(() => {
     router.push(linkUrl)
-  }, [linkUrl])
+  }, [linkUrl, router])
 
   return (
     <ImageWrapper onClick={onClick} imageUrl={imageUrl}>

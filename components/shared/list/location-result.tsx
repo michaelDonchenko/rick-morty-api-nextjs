@@ -13,9 +13,12 @@ const LocationResult: React.FC<LocationResultProps> = ({result}) => {
   const {dimension, name, residents, type} = result
   const router = useRouter()
 
-  const onClick = useCallback((id: string) => {
-    router.push(`characters/${id}`)
-  }, [])
+  const onClick = useCallback(
+    (id: string) => {
+      router.push(`characters/${id}`)
+    },
+    [router]
+  )
 
   return (
     <ResultContainer>

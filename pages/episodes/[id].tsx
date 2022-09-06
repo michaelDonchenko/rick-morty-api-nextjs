@@ -20,12 +20,15 @@ const Episode: React.FC<{data: EpisodeResponse}> = ({data}) => {
       title: `Episode | ${name}`,
       meta: [],
     }),
-    [data]
+    [name]
   )
 
-  const onImageClick = useCallback((id: string) => {
-    router.push(`/characters/${id}`)
-  }, [])
+  const onImageClick = useCallback(
+    (id: string) => {
+      router.push(`/characters/${id}`)
+    },
+    [router]
+  )
 
   return (
     <PageLayout headContext={headContext}>
@@ -41,7 +44,7 @@ const Episode: React.FC<{data: EpisodeResponse}> = ({data}) => {
           {characters.map(({id, image, name}) => (
             <ImageContainer key={id} onClick={() => onImageClick(id)}>
               <p>{name}</p>
-              <Image src={image} />
+              <Image alt={'character image'} src={image} />
             </ImageContainer>
           ))}
         </CardsContainer>

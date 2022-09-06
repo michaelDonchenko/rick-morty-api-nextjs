@@ -21,7 +21,7 @@ const Pagination: React.FC<PaginationProps> = ({count, next, pages, prev, router
     }
 
     router.push({pathname: pathname, query: {...query, page: next}})
-  }, [next])
+  }, [next, pathname, query, router])
 
   const handlePrev = useCallback(() => {
     if (!prev) {
@@ -29,7 +29,7 @@ const Pagination: React.FC<PaginationProps> = ({count, next, pages, prev, router
     }
 
     router.push({pathname: pathname, query: {...query, page: prev}})
-  }, [prev])
+  }, [prev, pathname, query, router])
 
   return (
     <Container>

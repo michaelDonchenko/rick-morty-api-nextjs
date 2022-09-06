@@ -26,9 +26,12 @@ const Character: React.FC<{data: {character: CharacterFullData}}> = ({data}) => 
     [name]
   )
 
-  const handleClick = useCallback((id: string) => {
-    router.push(`/episodes/${id}`)
-  }, [])
+  const handleClick = useCallback(
+    (id: string) => {
+      router.push(`/episodes/${id}`)
+    },
+    [router]
+  )
 
   return (
     <PageLayout headContext={headContext}>

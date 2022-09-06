@@ -8,7 +8,7 @@ const CharacterCard: React.FC<Character> = ({gender, image, name, species, statu
 
   const onClick = useCallback(() => {
     router.push(`/characters/${id}`)
-  }, [router])
+  }, [router, id])
 
   return (
     <ImageWrapper onClick={onClick} imageUrl={image}>

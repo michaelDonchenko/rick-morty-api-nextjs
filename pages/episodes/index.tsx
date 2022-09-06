@@ -21,9 +21,12 @@ const Episodes: React.FC<{data: EpisodesResponse}> = ({data}) => {
   const {count, next, pages, prev} = info
   const router = useRouter()
 
-  const onTitleClick = useCallback((id: string) => {
-    router.push(`${router.pathname}/${id}`)
-  }, [])
+  const onTitleClick = useCallback(
+    (id: string) => {
+      router.push(`${router.pathname}/${id}`)
+    },
+    [router]
+  )
 
   return (
     <PageLayout headContext={headContext}>
