@@ -4,10 +4,6 @@ import styled from 'styled-components'
 
 const links = [
   {
-    text: 'Home',
-    path: '/',
-  },
-  {
     text: 'Characters',
     path: '/characters',
   },

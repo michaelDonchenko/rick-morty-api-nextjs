@@ -35,8 +35,11 @@ const Pagination: React.FC<PaginationProps> = ({count, next, pages, prev, router
     <Container>
       <SubTitle align='left'>{`Showing ${count} results`}</SubTitle>
       <SubTitle align='left'>{`Page ${query.page || 1} out of ${pages}`}</SubTitle>
-      <ActionButton onClick={handlePrev}>Prev</ActionButton>
-      <ActionButton onClick={handleNext}>Next</ActionButton>
+
+      <ButtonsContainer>
+        <ActionButton onClick={handlePrev}>Prev</ActionButton>
+        <ActionButton onClick={handleNext}>Next</ActionButton>
+      </ButtonsContainer>
     </Container>
   )
 }
@@ -44,10 +47,20 @@ const Pagination: React.FC<PaginationProps> = ({count, next, pages, prev, router
 const Container = styled.div`
   display: flex;
   padding: 10px 5px;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+`
+
+const ButtonsContainer = styled.div`
+  display: flex;
 `
 
 const ActionButton = styled.button`
-  width: 160px;
+  width: 100px;
   height: 32px;
   border: 2px solid white;
   background-color: #22222e;

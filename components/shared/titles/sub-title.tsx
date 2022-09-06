@@ -20,6 +20,10 @@ const StyledSubTitle = styled.h2<{align; mb; mt}>`
   width: 100%;
   margin-top: ${(props) => `${props.mt}px`};
   margin-bottom: ${(props) => `${props.mb}px`};
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `
 
 export default SubTitle
