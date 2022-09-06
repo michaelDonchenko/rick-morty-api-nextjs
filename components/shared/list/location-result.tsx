@@ -27,7 +27,7 @@ const LocationResult: React.FC<LocationResultProps> = ({result}) => {
       <p>{`Dimension: ${dimension}`}</p>
       <p>
         {residents.map(({id, name}) => (
-          <Chip key={id} children={name} isClickable={true} onClick={onClick} id={id} />
+          <Chip key={id} text={name} isClickable={true} onClick={onClick} id={id} />
         ))}
       </p>
     </ResultContainer>

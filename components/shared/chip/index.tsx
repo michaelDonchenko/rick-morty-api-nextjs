@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 interface ChipProps {
   id: string
-  children: string
+  text: string
   isClickable: boolean
   onClick?: (id: string) => void
 }
 
-const Chip: React.FC<ChipProps> = ({children, onClick, isClickable, id}) => {
+const Chip: React.FC<ChipProps> = ({text, onClick, isClickable, id}) => {
   return (
     <Container isClickable={isClickable} onClick={() => onClick(id)}>
-      {children}
+      {text}
     </Container>
   )
 }

@@ -23,7 +23,7 @@ const Character: React.FC<{data: {character: CharacterFullData}}> = ({data}) => 
       title: `Character | ${name}`,
       meta: [],
     }),
-    [data]
+    [name]
   )
 
   const handleClick = useCallback((id: string) => {
@@ -58,7 +58,7 @@ const Character: React.FC<{data: {character: CharacterFullData}}> = ({data}) => 
             <p>{`Location (last seen): ${locationName}, ${locationDimension}, ${locationType}`}</p>
             <p>{`List of episodes:`}</p>
             {episodes.map(({id, name}) => (
-              <Chip key={id} children={`#${id} - ${name}`} isClickable={true} onClick={handleClick} id={id} />
+              <Chip key={id} text={`#${id} - ${name}`} isClickable={true} onClick={handleClick} id={id} />
             ))}
           </div>
         </CharacterContainer>

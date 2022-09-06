@@ -27,7 +27,7 @@ const EpisodeResult: React.FC<EpisodeResultProps> = ({result, onTitleClick}) => 
       <p>
         {characters.map((character, index) => (
           <Chip
-            children={`${character.name}`}
+            text={`${character.name}`}
             key={index}
             isClickable={true}
             onClick={onCharacterClick}
